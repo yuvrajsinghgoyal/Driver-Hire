@@ -25,7 +25,7 @@ import RecruiterChat from "./pages/RecruiterChat";
 export default function App() {
   return (
     <BrowserRouter>
-      <Layout>
+      <Layout >
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/choose-role" element={<ChooseRole />} />

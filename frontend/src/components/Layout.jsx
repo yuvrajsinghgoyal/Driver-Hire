@@ -13,19 +13,19 @@ const auth = JSON.parse(localStorage.getItem("dc_user"));
   const isLoggedIn = !!user;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
+    <div className="min-h-screen bg-white text-gray-900 flex flex-col">
       
       {/* HEADER */}
-      <header className="border-b border-slate-800 bg-slate-900/70 backdrop-blur sticky top-0 z-20">
+      <header className="border-b border-gray-300 bg-white backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 rounded-xl bg-emerald-500/10 border border-emerald-400/40 items-center justify-center text-emerald-300 font-bold">
+            <span className="inline-flex h-8 w-8 rounded-xl bg-gray-600/10 border border-gray-300 items-center justify-center text-gray-600 font-bold">
               DC
             </span>
             <span className="font-semibold tracking-wide">
-              Drive<span className="text-emerald-400">Connect</span>
+              Drive<span className="text-gray-600">Connect</span>
             </span>
           </Link>
 
@@ -34,25 +34,25 @@ const auth = JSON.parse(localStorage.getItem("dc_user"));
          
 
 <nav className="flex items-center gap-4 text-sm">
-  <Link to="/" className={`px-3 py-1 rounded-full ${location.pathname === "/" ? "bg-emerald-500 text-slate-950" : "text-slate-300 hover:bg-slate-800"}`}>Home</Link>
+  <Link to="/" className={`px-3 py-1 rounded-full ${location.pathname === "/" ? "bg-gray-600 text-white" : "text-gray-600 hover:bg-gray-200"}`}>Home</Link>
 
   {!auth && (
     <>
-      <Link to="/choose-role" className="px-3 py-1 rounded-full text-slate-300 hover:bg-slate-800">Get Started</Link>
-      <Link to="/login" className="px-3 py-1 rounded-full text-slate-300 hover:bg-slate-800">Login</Link>
+      <Link to="/choose-role" className="px-3 py-1 rounded-full text-gray-600 hover:bg-gray-200">Get Started</Link>
+      <Link to="/login" className="px-3 py-1 rounded-full text-gray-600 hover:bg-gray-200">Login</Link>
     </>
   )}
 
   {auth && (
     <>
-      <Link to="/profile" className={`px-3 py-1 rounded-full ${location.pathname === "/profile" ? "bg-emerald-500 text-slate-950" : "text-slate-300 hover:bg-slate-800"}`}>My Profile</Link>
+      <Link to="/profile" className={`px-3 py-1 rounded-full ${location.pathname === "/profile" ? "bg-gray-600 text-white" : "text-gray-600 hover:bg-gray-200"}`}>My Profile</Link>
 
       {auth.role === "driver" && (
-        <Link to="/applications" className="px-3 py-1 rounded-full text-slate-300 hover:bg-slate-800">My Applications</Link>
+        <Link to="/applications" className="px-3 py-1 rounded-full text-gray-600 hover:bg-gray-200">My Applications</Link>
       )}
 
       {auth.role === "recruiter" && (
-        <Link to="/dashboard/recruiter" className="px-3 py-1 rounded-full text-slate-300 hover:bg-slate-800">Dashboard</Link>
+        <Link to="/dashboard/recruiter" className="px-3 py-1 rounded-full text-gray-600 hover:bg-gray-200">Dashboard</Link>
       )}
 
       <button
@@ -61,7 +61,7 @@ const auth = JSON.parse(localStorage.getItem("dc_user"));
           localStorage.removeItem("dc_user");
           window.location.href = "/";
         }}
-        className="px-3 py-1 rounded-full bg-red-500 text-slate-900 font-semibold"
+        className="px-3 py-1 rounded-full bg-red-500 text-white font-semibold"
       >
         Logout
       </button>
@@ -89,7 +89,7 @@ const auth = JSON.parse(localStorage.getItem("dc_user"));
       </motion.main>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-800 text-xs text-slate-500">
+      <footer className="border-t border-gray-300 text-xs text-gray-600">
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between">
           <span>© {new Date().getFullYear()} DriveConnect</span>
           <span>Built with ❤️ + MERN</span>

@@ -115,22 +115,22 @@ export default function MyProfile() {
         <motion.form
           variants={fadeIn(0.1)}
           onSubmit={handleSubmit}
-          className="bg-slate-900/80 border border-slate-700 rounded-3xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="bg-white border border-gray-300 rounded-3xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {/* Left — avatar */}
           <div className="flex flex-col items-center gap-3">
-            <div className="w-36 h-36 rounded-full overflow-hidden border border-slate-700">
+            <div className="w-36 h-36 rounded-full overflow-hidden border border-gray-300">
               {preview ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={preview} alt="avatar" className="w-full h-full object-cover" />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-400">
+                <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-600">
                   No Photo
                 </div>
               )}
             </div>
 
-            <label className="cursor-pointer inline-block mt-2 text-sm px-3 py-1 rounded-full bg-slate-800 border border-slate-600">
+            <label className="cursor-pointer inline-block mt-2 text-sm px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-900">
               <input type="file" accept="image/*" onChange={onImageChange} className="hidden" />
               Change Photo
             </label>
@@ -141,7 +141,7 @@ export default function MyProfile() {
                 setImageFile(null);
                 setPreview(user.profilePic || null);
               }}
-              className="text-xs text-slate-400 mt-1"
+              className="text-xs text-gray-600 mt-1"
             >
               Reset
             </button>
@@ -150,7 +150,7 @@ export default function MyProfile() {
           {/* Right — fields */}
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="sm:col-span-2">
-              <label className="text-xs text-slate-300">Full Name</label>
+              <label className="text-xs text-gray-600">Full Name</label>
               <input
                 name="name"
                 value={form.name}
@@ -160,17 +160,17 @@ export default function MyProfile() {
             </div>
 
             <div>
-              <label className="text-xs text-slate-300">Email</label>
-              <input value={user.email} disabled className="input-box w-full bg-slate-950/80" />
+              <label className="text-xs text-gray-600">Email</label>
+              <input value={user.email} disabled className="input-box w-full bg-white" />
             </div>
 
             <div>
-              <label className="text-xs text-slate-300">Phone</label>
+              <label className="text-xs text-gray-600">Phone</label>
               <input name="phone" value={form.phone} onChange={onChange} className="input-box w-full" />
             </div>
 
             <div>
-              <label className="text-xs text-slate-300">City</label>
+              <label className="text-xs text-gray-600">City</label>
               <input name="city" value={form.city} onChange={onChange} className="input-box w-full" />
             </div>
 
@@ -178,22 +178,22 @@ export default function MyProfile() {
             {isDriver && (
               <>
                 <div>
-                  <label className="text-xs text-slate-300">Experience (years)</label>
+                  <label className="text-xs text-gray-600">Experience (years)</label>
                   <input name="experience" type="number" value={form.experience} onChange={onChange} className="input-box w-full" />
                 </div>
 
                 <div>
-                  <label className="text-xs text-slate-300">Vehicle Type</label>
+                  <label className="text-xs text-gray-600">Vehicle Type</label>
                   <input name="vehicleType" value={form.vehicleType} onChange={onChange} className="input-box w-full" />
                 </div>
 
                 <div>
-                  <label className="text-xs text-slate-300">License Number</label>
+                  <label className="text-xs text-gray-600">License Number</label>
                   <input name="licenseNumber" value={form.licenseNumber} onChange={onChange} className="input-box w-full" />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs text-slate-300">Short Bio</label>
+                  <label className="text-xs text-gray-600">Short Bio</label>
                   <textarea name="bio" rows={3} value={form.bio} onChange={onChange} className="input-box w-full" />
                 </div>
               </>
@@ -203,12 +203,12 @@ export default function MyProfile() {
             {!isDriver && (
               <>
                 <div className="sm:col-span-2">
-                  <label className="text-xs text-slate-300">Company Name</label>
+                  <label className="text-xs text-gray-600">Company Name</label>
                   <input name="companyName" value={form.companyName} onChange={onChange} className="input-box w-full" />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs text-slate-300">Requirements / About Company</label>
+                  <label className="text-xs text-gray-600">Requirements / About Company</label>
                   <textarea name="requirements" rows={3} value={form.requirements} onChange={onChange} className="input-box w-full" />
                 </div>
               </>
@@ -217,7 +217,7 @@ export default function MyProfile() {
 
           {/* Actions full width */}
           <div className="md:col-span-3 mt-1 flex gap-3 justify-end">
-            <button type="submit" disabled={loading} className="bg-emerald-500 px-4 py-2 rounded-full text-slate-900 font-semibold">
+            <button type="submit" disabled={loading} className="bg-gray-600 px-4 py-2 rounded-full text-white font-semibold">
               {loading ? "Saving..." : "Save Changes"}
             </button>
           </div>

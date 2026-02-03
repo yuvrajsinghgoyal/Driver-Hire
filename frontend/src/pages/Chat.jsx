@@ -81,20 +81,20 @@ useEffect(() => {
         variants={fadeIn(0)}
         initial="hidden"
         animate="show"
-        className="bg-slate-900 border border-slate-700 rounded-3xl h-[75vh] flex flex-col"
+        className="bg-gray-100 border border-gray-300 rounded-3xl h-[75vh] flex flex-col"
       >
         {/* HEADER */}
-        <div className="border-b border-slate-700 px-5 py-3">
+        <div className="border-b border-gray-300 px-5 py-3">
           <h2 className="text-lg font-semibold">
             {job?.title || "Chat"}
           </h2>
-          <p className="text-xs text-slate-400">Job Discussion</p>
+          <p className="text-xs text-gray-600">Job Discussion</p>
         </div>
 
         {/* MESSAGES */}
         <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
           {messages.length === 0 && (
-            <p className="text-slate-400 text-sm text-center mt-10">
+            <p className="text-gray-600 text-sm text-center mt-10">
               No messages yet 👋
             </p>
           )}
@@ -105,8 +105,8 @@ useEffect(() => {
               className={`max-w-[70%] px-4 py-2 rounded-2xl text-sm ${
                 // handle populated sender (object) or raw id
                 (msg.sender && (msg.sender._id || msg.sender) === currentUser.id) || (msg.sender === currentUser.id)
-                  ? "bg-emerald-500 text-slate-900 ml-auto"
-                  : "bg-slate-800 text-slate-100"
+                  ? "bg-gray-600 text-white ml-auto"
+                  : "bg-white text-gray-900"
               }`}
             >
               {msg.text}
@@ -115,18 +115,18 @@ useEffect(() => {
         </div>
 
         {/* INPUT */}
-        <div className="border-t border-slate-700 px-4 py-3 flex gap-2">
+        <div className="border-t border-gray-300 px-4 py-3 flex gap-2">
           <input
             type="text"
             placeholder="Type a message..."
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="flex-1 bg-slate-950 border border-slate-700 rounded-full px-4 py-2 text-sm"
+            className="flex-1 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-900"
           />
 
           <button
             onClick={sendMessage}
-            className="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-5 rounded-full font-semibold text-sm"
+            className="bg-gray-600 hover:bg-gray-500 text-white px-5 rounded-full font-semibold text-sm"
           >
             Send
           </button>

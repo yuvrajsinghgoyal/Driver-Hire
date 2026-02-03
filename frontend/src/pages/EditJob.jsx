@@ -29,28 +29,28 @@ export default function EditJob() {
   if (!form) return <p className="text-center p-5">Loading...</p>;
 
   return (
-    <div className="max-w-xl mx-auto bg-slate-900 p-6 rounded-2xl mt-8">
+    <div className="max-w-xl mx-auto bg-white border border-gray-300 p-6 rounded-2xl mt-8">
       <h2 className="text-xl font-bold mb-4">Edit Job</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
 
         <input
           name="title"
-          className="w-full bg-slate-800 border p-2 rounded"
+          className="w-full bg-white border border-gray-300 p-2 rounded text-gray-900"
           value={form.title}
           onChange={handleChange}
         />
 
         <input
           name="location"
-          className="w-full bg-slate-800 border p-2 rounded"
+          className="w-full bg-white border border-gray-300 p-2 rounded text-gray-900"
           value={form.location}
           onChange={handleChange}
         />
 
         <input
           name="salaryRange"
-          className="w-full bg-slate-800 border p-2 rounded"
+          className="w-full bg-white border border-gray-300 p-2 rounded text-gray-900"
           value={form.salaryRange}
           onChange={handleChange}
         />
@@ -58,14 +58,14 @@ export default function EditJob() {
         <textarea
           name="description"
           rows="3"
-          className="w-full bg-slate-800 border p-2 rounded"
+          className="w-full bg-white border border-gray-300 p-2 rounded text-gray-900"
           value={form.description}
           onChange={handleChange}
         />
 
         <button
           type="submit"
-          className="w-full bg-emerald-500 text-black p-2 rounded font-semibold"
+          className="w-full bg-gray-600 text-white p-2 rounded font-semibold"
         >
           Save Changes
         </button>

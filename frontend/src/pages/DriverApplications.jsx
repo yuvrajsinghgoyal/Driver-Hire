@@ -33,7 +33,7 @@ export default function DriverApplications() {
         </motion.h2>
 
         {applications.length === 0 ? (
-          <p className="text-slate-400 text-sm">
+          <p className="text-gray-600 text-sm">
             You have not applied to any job yet.
           </p>
         ) : (
@@ -42,7 +42,7 @@ export default function DriverApplications() {
               <motion.div
                 key={app._id}
                 variants={fadeIn(0.1)}
-                className="bg-slate-900/50 border border-slate-700 rounded-xl p-4 flex justify-between items-center hover:bg-slate-900/70"
+                className="bg-gray-100 border border-gray-300 rounded-xl p-4 flex justify-between items-center hover:bg-gray-200"
               >
                 {/* LEFT: JOB INFO */}
                 <div
@@ -52,10 +52,10 @@ export default function DriverApplications() {
                   <h3 className="font-semibold text-lg hover:underline">
                     {app.job?.title}
                   </h3>
-                  <p className="text-slate-400 text-xs">
+                  <p className="text-gray-600 text-xs">
                     {app.job?.location}
                   </p>
-                  <p className="text-emerald-300 font-semibold text-sm mt-1">
+                  <p className="text-gray-900 font-semibold text-sm mt-1">
                     {app.job?.salaryRange}
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function DriverApplications() {
                     className={`px-3 py-1 rounded-full text-xs font-semibold
                       ${
                         app.status === "accepted"
-                          ? "bg-emerald-600 text-white"
+                          ? "bg-gray-600 text-white"
                           : app.status === "rejected"
                           ? "bg-red-500 text-white"
                           : "bg-yellow-500 text-black"
@@ -87,7 +87,7 @@ export default function DriverApplications() {
                       }
                       window.location.href = `/chat/${jobId}/${recruiterId}`;
                     }}
-                    className="mt-2 bg-blue-500 hover:bg-blue-400 px-4 py-1 rounded-full text-xs font-semibold text-white"
+                    className="mt-2 bg-gray-600 hover:bg-gray-500 px-4 py-1 rounded-full text-xs font-semibold text-white"
                   >
                     Message Recruiter
                   </button>
@@ -104,27 +104,27 @@ export default function DriverApplications() {
           JOB DETAILS MODAL
       ========================== */}
       {selectedApp && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-6 w-[420px] shadow-xl">
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white border border-gray-300 rounded-3xl p-6 w-[420px] shadow-xl">
 
             <h2 className="text-xl font-bold mb-2">
               {selectedApp.job?.title}
             </h2>
 
-            <p className="text-slate-300 text-sm mb-1">
+            <p className="text-gray-900 text-sm mb-1">
               <strong>Location:</strong> {selectedApp.job?.location}
             </p>
 
-            <p className="text-slate-300 text-sm mb-1">
+            <p className="text-gray-900 text-sm mb-1">
               <strong>Salary:</strong> {selectedApp.job?.salaryRange}
             </p>
 
-            <p className="text-slate-300 text-sm mb-1">
+            <p className="text-gray-900 text-sm mb-1">
               <strong>Requirements:</strong>{" "}
               {selectedApp.job?.requirements || "Not specified"}
             </p>
 
-            <p className="text-slate-300 text-sm mb-3">
+            <p className="text-gray-900 text-sm mb-3">
               <strong>Description:</strong>{" "}
               {selectedApp.job?.description || "No description"}
             </p>
@@ -135,7 +135,7 @@ export default function DriverApplications() {
                 className={`px-3 py-1 rounded-full text-xs font-semibold
                   ${
                     selectedApp.status === "accepted"
-                      ? "bg-emerald-600 text-white"
+                      ? "bg-gray-600 text-white"
                       : selectedApp.status === "rejected"
                       ? "bg-red-500 text-white"
                       : "bg-yellow-500 text-black"

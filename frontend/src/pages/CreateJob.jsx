@@ -26,7 +26,7 @@ export default function CreateJob() {
   };
 
   return (
-    <div className="max-w-xl mx-auto bg-slate-900 p-6 rounded-2xl border border-slate-700 mt-8">
+    <div className="max-w-xl mx-auto bg-white border border-gray-300 p-6 rounded-2xl mt-8">
       <h2 className="text-xl font-bold mb-4">Post a New Job</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -34,7 +34,7 @@ export default function CreateJob() {
         <input
           name="title"
           placeholder="Job Title"
-          className="w-full p-2 rounded bg-slate-800 border border-slate-600"
+          className="w-full p-2 rounded bg-white border border-gray-300 text-gray-900"
           value={form.title}
           onChange={handleChange}
         />
@@ -42,7 +42,7 @@ export default function CreateJob() {
         <input
           name="location"
           placeholder="Location"
-          className="w-full p-2 rounded bg-slate-800 border border-slate-600"
+          className="w-full p-2 rounded bg-white border border-gray-300 text-gray-900"
           value={form.location}
           onChange={handleChange}
         />
@@ -50,7 +50,7 @@ export default function CreateJob() {
         <input
           name="salaryRange"
           placeholder="Salary Range (e.g. ₹20k - ₹30k)"
-          className="w-full p-2 rounded bg-slate-800 border border-slate-600"
+          className="w-full p-2 rounded bg-white border border-gray-300 text-gray-900"
           value={form.salaryRange}
           onChange={handleChange}
         />
@@ -58,7 +58,7 @@ export default function CreateJob() {
         <textarea
           name="description"
           placeholder="Job Description"
-          className="w-full p-2 rounded bg-slate-800 border border-slate-600"
+          className="w-full p-2 rounded bg-white border border-gray-300 text-gray-900"
           rows="3"
           value={form.description}
           onChange={handleChange}
@@ -67,7 +67,7 @@ export default function CreateJob() {
         <textarea
           name="requirements"
           placeholder="Candidate Requirements"
-          className="w-full p-2 rounded bg-slate-800 border border-slate-600"
+          className="w-full p-2 rounded bg-white border border-gray-300 text-gray-900"
           rows="3"
           value={form.requirements}
           onChange={handleChange}
@@ -75,7 +75,7 @@ export default function CreateJob() {
 
         <button
           type="submit"
-          className="w-full bg-emerald-500 text-black py-2 rounded font-semibold"
+          className="w-full bg-gray-600 text-white py-2 rounded font-semibold"
         >
           Post Job
         </button>

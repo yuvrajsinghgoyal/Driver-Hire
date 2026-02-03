@@ -69,7 +69,7 @@ export default function DriverDashboard() {
         </motion.h2>
 
         {jobs.length === 0 && (
-          <p className="text-slate-400 text-sm">No jobs posted yet.</p>
+          <p className="text-gray-600 text-sm">No jobs posted yet.</p>
         )}
 
         {/* JOB LIST */}
@@ -81,13 +81,13 @@ export default function DriverDashboard() {
               <motion.div
                 key={job._id}
                 variants={fadeIn(0.1)}
-                className="bg-slate-900/50 border border-slate-700 rounded-xl p-4 flex justify-between items-center cursor-pointer hover:bg-slate-900/70"
+                className="bg-gray-100 border border-gray-300 rounded-xl p-4 flex justify-between items-center cursor-pointer hover:bg-gray-200"
               >
                 {/* Clicking job title → open details */}
                 <div onClick={() => setSelectedJob(job)}>
                   <h3 className="font-semibold text-lg hover:underline">{job.title}</h3>
-                  <p className="text-slate-400 text-xs">{job.location}</p>
-                  <p className="text-emerald-300 font-semibold text-sm mt-1">
+                  <p className="text-gray-600 text-xs">{job.location}</p>
+                  <p className="text-gray-900 font-semibold text-sm mt-1">
                     {job.salaryRange}
                   </p>
                 </div>
@@ -103,7 +103,7 @@ export default function DriverDashboard() {
                       e.stopPropagation();
                       applyJob(job._id);
                     }}
-                    className="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-4 py-1 rounded-full text-xs font-semibold shadow"
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-1 rounded-full text-xs font-semibold shadow"
                   >
                     Apply
                   </button>
@@ -121,13 +121,13 @@ export default function DriverDashboard() {
         </motion.h2>
 
         {myApplications.length === 0 ? (
-          <p className="text-slate-400 text-sm">You haven't applied to any jobs yet.</p>
+          <p className="text-gray-600 text-sm">You haven't applied to any jobs yet.</p>
         ) : (
           myApplications.map((app) => (
             <motion.div
               key={app._id}
               variants={fadeIn(0.15)}
-              className="bg-slate-900/40 border border-slate-700 rounded-xl p-4 mb-3"
+              className="bg-gray-100 border border-gray-300 rounded-xl p-4 mb-3"
             >
 
 
@@ -135,7 +135,7 @@ export default function DriverDashboard() {
 
             <div>
               <p className="font-semibold text-lg">{app.job?.title}</p>
-              <p className="text-slate-400 text-xs">{app.job?.location}</p>
+              <p className="text-gray-600 text-xs">{app.job?.location}</p>
 
               {/* STATUS BADGE */}
 
@@ -152,7 +152,7 @@ export default function DriverDashboard() {
                 className={`
                   inline-block mt-2 px-3 py-1 text-xs rounded-full font-semibold
                   ${app.status === "pending" && "bg-yellow-500/20 text-yellow-300"}
-                  ${app.status === "accepted" && "bg-emerald-500/20 text-emerald-300"}
+                  ${app.status === "accepted" && "bg-gray-600/20 text-gray-600"}
                   ${app.status === "rejected" && "bg-red-500/20 text-red-300"}
                 `}
               >
@@ -169,7 +169,7 @@ export default function DriverDashboard() {
                     }
                     window.location.href = `/chat/${jobId}/${recruiterId}`;
                   }}
-                  className="bg-blue-500 px-4 py-1 rounded-full text-xs font-semibold text-white ml-2"
+                  className="bg-gray-600 px-4 py-1 rounded-full text-xs font-semibold text-white ml-2"
                 >
                   Message Recruiter
                 </button>
@@ -184,13 +184,13 @@ export default function DriverDashboard() {
       {/* JOB DETAILS POPUP */}
       {selectedJob && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-6 w-[420px] shadow-xl">
+          <div className="bg-white border border-gray-300 rounded-3xl p-6 w-[420px] shadow-xl">
 
             <h2 className="text-xl font-bold mb-2">{selectedJob.title}</h2>
-            <p className="text-slate-300 text-sm mb-1"><strong>Location:</strong> {selectedJob.location}</p>
-            <p className="text-slate-300 text-sm mb-1"><strong>Salary:</strong> {selectedJob.salaryRange}</p>
-            <p className="text-slate-300 text-sm mb-1"><strong>Requirements:</strong> {selectedJob.requirements || "Not specified"}</p>
-            <p className="text-slate-300 text-sm mb-3"><strong>Description:</strong> {selectedJob.description || "No description"}</p>
+            <p className="text-gray-900 text-sm mb-1"><strong>Location:</strong> {selectedJob.location}</p>
+            <p className="text-gray-900 text-sm mb-1"><strong>Salary:</strong> {selectedJob.salaryRange}</p>
+            <p className="text-gray-900 text-sm mb-1"><strong>Requirements:</strong> {selectedJob.requirements || "Not specified"}</p>
+            <p className="text-gray-900 text-sm mb-3"><strong>Description:</strong> {selectedJob.description || "No description"}</p>
 
             {/* Apply Button inside popup */}
             {appliedJobs.includes(selectedJob._id) ? (
@@ -200,7 +200,7 @@ export default function DriverDashboard() {
             ) : (
               <button
                 onClick={() => applyJob(selectedJob._id)}
-                className="w-full bg-emerald-500 text-slate-900 py-2 rounded-full font-semibold mb-3 hover:bg-emerald-400"
+                className="w-full bg-gray-600 text-white py-2 rounded-full font-semibold mb-3 hover:bg-gray-500"
               >
                 Apply Now
               </button>

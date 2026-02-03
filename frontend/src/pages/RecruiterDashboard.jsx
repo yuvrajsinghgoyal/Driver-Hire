@@ -101,9 +101,9 @@ export default function RecruiterDashboard() {
         {/* ================= CREATE JOB ================= */}
         <motion.div
           variants={fadeIn(0.1)}
-          className="bg-slate-900/60 border border-slate-700 p-6 rounded-3xl mb-10 shadow-xl"
+          className="bg-gray-100 border border-gray-300 p-6 rounded-3xl mb-10 shadow-xl"
         >
-          <h3 className="font-semibold mb-4 text-xl text-emerald-300">
+          <h3 className="font-semibold mb-4 text-xl text-gray-900">
             📌 Create New Job
           </h3>
 
@@ -144,7 +144,7 @@ export default function RecruiterDashboard() {
 
           <button
             onClick={createJob}
-            className="bg-emerald-500 px-5 py-2 rounded-full text-slate-900 font-semibold hover:bg-emerald-400"
+            className="bg-gray-600 px-5 py-2 rounded-full text-white font-semibold hover:bg-gray-500"
           >
             + Create Job
           </button>
@@ -152,27 +152,27 @@ export default function RecruiterDashboard() {
 
         {/* ================= POSTED JOBS ================= */}
         <motion.div variants={fadeIn(0.2)}>
-          <h3 className="font-semibold text-xl mb-3 text-emerald-300">
+          <h3 className="font-semibold text-xl mb-3 text-gray-900">
             📂 Your Posted Jobs
           </h3>
 
           {myJobs.length === 0 ? (
-            <p className="text-slate-400 text-sm">No jobs posted yet.</p>
+            <p className="text-gray-600 text-sm">No jobs posted yet.</p>
           ) : (
             myJobs.map((job) => (
               <div
                 key={job._id}
-                className="bg-slate-900/50 border border-slate-700 rounded-2xl px-4 py-4 mb-3 flex justify-between items-center"
+                className="bg-gray-100 border border-gray-300 rounded-2xl px-4 py-4 mb-3 flex justify-between items-center"
               >
                 <div>
                   <p className="font-semibold text-lg">{job.title}</p>
-                  <p className="text-slate-400 text-xs">{job.location}</p>
-                  <p className="text-emerald-300 text-sm">{job.salaryRange}</p>
+                  <p className="text-gray-600 text-xs">{job.location}</p>
+                  <p className="text-gray-900 text-sm">{job.salaryRange}</p>
                 </div>
 
                 <button
                   onClick={() => openApplicants(job._id)}
-                  className="bg-yellow-400 px-4 py-1 rounded-full text-xs font-semibold text-slate-900"
+                  className="bg-gray-600 px-4 py-1 rounded-full text-xs font-semibold text-white"
                 >
                   View Applicants
                 </button>
@@ -184,18 +184,18 @@ export default function RecruiterDashboard() {
         {/* ================= APPLICANTS MODAL ================= */}
         {showApplicantsModal && (
           <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-            <div className="bg-slate-900 border border-slate-700 rounded-3xl p-6 w-[450px]">
-              <h3 className="text-lg font-semibold mb-4 text-emerald-300">
+            <div className="bg-white border border-gray-300 rounded-3xl p-6 w-[450px]">
+              <h3 className="text-lg font-semibold mb-4 text-gray-900">
                 Applicants
               </h3>
 
               {selectedApplicants.map((app) => (
                 <div
                   key={app._id}
-                  className="border border-slate-700 rounded-xl p-3 mb-3 bg-slate-950"
+                  className="border border-gray-300 rounded-xl p-3 mb-3 bg-white"
                 >
                   <p className="font-semibold">{app.driver?.name}</p>
-                  <p className="text-xs text-slate-400">{app.driver?.phone}</p>
+                  <p className="text-xs text-gray-600">{app.driver?.phone}</p>
 
                   {/* 💬 MESSAGE DRIVER */}
                   <button
@@ -209,7 +209,7 @@ export default function RecruiterDashboard() {
                       // Use recruiter-specific chat route
                       window.location.href = `/chat/recruiter/${jobId}/${driverId}`;
                     }}
-                    className="mt-3 w-full bg-blue-500 hover:bg-blue-400 text-white px-3 py-2 rounded-full text-xs font-semibold"
+                    className="mt-3 w-full bg-gray-600 hover:bg-gray-500 text-white px-3 py-2 rounded-full text-xs font-semibold"
                   >
                     💬 Message Driver
                   </button>
@@ -234,7 +234,7 @@ export default function RecruiterDashboard() {
                       <>
                         <button
                           onClick={() => updateStatus(app._id, "accepted")}
-                          className="bg-emerald-500 px-3 py-1 rounded-full text-xs font-semibold w-full"
+                          className="bg-gray-600 px-3 py-1 rounded-full text-xs font-semibold w-full text-white"
                         >
                           Accept
                         </button>
@@ -252,7 +252,7 @@ export default function RecruiterDashboard() {
 
               <button
                 onClick={() => setShowApplicantsModal(false)}
-                className="mt-4 w-full bg-slate-700 px-4 py-2 rounded-full"
+                className="mt-4 w-full bg-gray-600 px-4 py-2 rounded-full text-white"
               >
                 Close
               </button>

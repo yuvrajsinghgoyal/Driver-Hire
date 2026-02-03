@@ -21,11 +21,11 @@ export default function ChooseRole() {
           className="text-2xl sm:text-3xl font-bold"
         >
           How do you want to use{" "}
-          <span className="text-emerald-400">DriveConnect</span>?
+          <span className="text-gray-600">DriveConnect</span>?
         </motion.h2>
         <motion.p
           variants={fadeIn(0.1)}
-          className="text-slate-300 text-sm max-w-2xl mx-auto"
+          className="text-gray-600 text-sm max-w-2xl mx-auto"
         >
           Choose whether you are looking for a driver job or you want to hire a
           driver for yourself, your company, or your family.
@@ -69,26 +69,26 @@ function RoleCard({ to, title, subtitle, points, icon }) {
       initial="hidden"
       animate="show"
       whileHover={{ y: -4, scale: 1.01 }}
-      className="border border-slate-700 rounded-3xl p-6 bg-slate-900/80 shadow-lg shadow-slate-900/70 flex flex-col"
+      className="border border-gray-300 rounded-3xl p-6 bg-gray-100 shadow-lg shadow-gray-200 flex flex-col"
     >
       <div className="flex items-center gap-3 mb-3">
         <span className="text-2xl">{icon}</span>
         <div className="text-left">
           <h3 className="text-lg font-semibold">{title}</h3>
-          <p className="text-xs text-slate-400">{subtitle}</p>
+          <p className="text-xs text-gray-600">{subtitle}</p>
         </div>
       </div>
-      <ul className="text-xs text-slate-300 space-y-1.5 flex-1">
+      <ul className="text-xs text-gray-600 space-y-1.5 flex-1">
         {points.map((p) => (
           <li key={p} className="flex gap-2 items-start">
-            <span className="mt-[2px] text-emerald-400">•</span>
+            <span className="mt-[2px] text-gray-600">•</span>
             <span>{p}</span>
           </li>
         ))}
       </ul>
       <Link
         to={to}
-        className="mt-5 inline-flex justify-center items-center px-4 py-2.5 rounded-full bg-emerald-500 text-slate-950 text-xs font-semibold hover:scale-[1.02] active:scale-95 transition"
+        className="mt-5 inline-flex justify-center items-center px-4 py-2.5 rounded-full bg-gray-600 text-white text-xs font-semibold hover:scale-[1.02] active:scale-95 transition"
       >
         Continue
       </Link>
